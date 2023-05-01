@@ -1,6 +1,6 @@
-package com.test.MarsRoverApp.MarsRover;
+package com.rover.MarsRoverApp.MarsRover;
 
-import com.test.MarsRoverApp.MarsRover.service.MarsRoverRunner;
+import com.rover.MarsRoverApp.MarsRover.service.MarsRoverRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

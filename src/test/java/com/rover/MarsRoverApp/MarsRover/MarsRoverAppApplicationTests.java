@@ -1,4 +1,4 @@
-package com.test.MarsRoverApp.MarsRover;
+package com.rover.MarsRoverApp.MarsRover;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

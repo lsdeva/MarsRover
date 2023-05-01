@@ -1,8 +1,8 @@
-package com.test.MarsRoverApp.MarsRover.service;
+package com.rover.MarsRoverApp.MarsRover.service;
 
-import com.test.MarsRoverApp.MarsRover.Entity.Direction;
-import com.test.MarsRoverApp.MarsRover.Entity.MarsRover;
-import com.test.MarsRoverApp.MarsRover.Exceptions.InvalidCommandException;
+import com.rover.MarsRoverApp.MarsRover.Entity.Direction;
+import com.rover.MarsRoverApp.MarsRover.Entity.MarsRover;
+import com.rover.MarsRoverApp.MarsRover.Exceptions.InvalidCommandException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class MarsRoverRunner implements CommandLineRunner {
     @Autowired
     MarsRoverService marsRoverService;
 
-    private static Logger LOG = LoggerFactory.getLogger(MarsRoverRunner.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MarsRoverRunner.class);
 
     @Override
     public void run(String... args) {
@@ -49,7 +49,7 @@ public class MarsRoverRunner implements CommandLineRunner {
 
         System.out.println(marsRover.getStatus());
 
-        LOG.info("STOPING THE ROVER APPLICATION");
+        LOG.info("STOPPING THE ROVER APPLICATION");
 
     }
 

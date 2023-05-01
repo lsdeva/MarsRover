@@ -1,4 +1,4 @@
-package com.test.MarsRoverApp.MarsRover.Entity;
+package com.rover.MarsRoverApp.MarsRover.Entity;
 
 public class MarsRover {
     private Position position;

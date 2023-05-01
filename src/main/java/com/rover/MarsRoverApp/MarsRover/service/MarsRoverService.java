@@ -1,6 +1,6 @@
-package com.test.MarsRoverApp.MarsRover.service;
+package com.rover.MarsRoverApp.MarsRover.service;
 
-import com.test.MarsRoverApp.MarsRover.Entity.MarsRover;
+import com.rover.MarsRoverApp.MarsRover.Entity.MarsRover;
 import org.springframework.stereotype.Service;
 
 @Service
