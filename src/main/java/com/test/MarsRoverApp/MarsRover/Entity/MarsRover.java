@@ -1,7 +1,5 @@
 package com.test.MarsRoverApp.MarsRover.Entity;
 
-import org.springframework.stereotype.Component;
-
 public class MarsRover {
     private Position position;
 

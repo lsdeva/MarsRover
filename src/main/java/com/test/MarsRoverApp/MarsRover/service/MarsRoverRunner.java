@@ -10,6 +10,9 @@ import org.springframework.boot.CommandLineRunner;
 
 import java.util.Arrays;
 
+/*
+Mars Rover creation and command processing via MarsRoverService
+ */
 public class MarsRoverRunner implements CommandLineRunner {
 
     @Autowired

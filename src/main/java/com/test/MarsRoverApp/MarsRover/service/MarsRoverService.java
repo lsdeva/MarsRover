@@ -1,7 +1,6 @@
 package com.test.MarsRoverApp.MarsRover.service;
 
 import com.test.MarsRoverApp.MarsRover.Entity.MarsRover;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

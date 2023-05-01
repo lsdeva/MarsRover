@@ -11,7 +11,10 @@ public class MarsRoverAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MarsRoverAppApplication.class, args);
 	}
-
+/*
+This application only focus on processing the rover initialization and command process via CLR.
+roverProcess boostrap the Spring Application initiation with provided command line arguments.
+ */
 	@Bean
 	public MarsRoverRunner roverProcess(){
 		return new MarsRoverRunner();
