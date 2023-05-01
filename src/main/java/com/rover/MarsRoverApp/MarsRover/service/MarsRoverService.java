@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MarsRoverService {
+    /*
+    MarsRoverService process the movements command against a given rover. Any unknown move commands will be ignored.
+     */
     public MarsRover processCommands(MarsRover marsRover, char[] commands) {
         for (char command : commands) {
             switch (command) {
