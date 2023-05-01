@@ -27,13 +27,12 @@ public class MarsRover {
     }
 
     private String getPrintableDirection(Direction direction){
-        switch (direction) {
-            case N: return "NORTH";
-            case E: return "EAST";
-            case S: return "SOUTH";
-            case W: return "WEST";
-        }
-        return "";
+        return switch (direction) {
+            case N -> "NORTH";
+            case E -> "EAST";
+            case S -> "SOUTH";
+            case W -> "WEST";
+        };
     }
 
     public String getStatus() {

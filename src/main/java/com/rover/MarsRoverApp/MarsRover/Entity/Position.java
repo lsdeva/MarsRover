@@ -11,19 +11,19 @@ public class Position {
 
     public void moveForward(Direction direction) {
         switch (direction) {
-            case N: y++; break;
-            case E: x++; break;
-            case S: y--; break;
-            case W: x--; break;
+            case N -> y++;
+            case E -> x++;
+            case S -> y--;
+            case W -> x--;
         }
     }
 
     public void moveBackward(Direction direction) {
         switch (direction) {
-            case N: y--; break;
-            case E:x--; break;
-            case S: y++; break;
-            case W:x++; break;
+            case N -> y--;
+            case E -> x--;
+            case S -> y++;
+            case W -> x++;
         }
     }
 
