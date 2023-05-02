@@ -6,7 +6,10 @@ import com.rover.MarsRoverApp.MarsRover.Exceptions.InvalidCommandException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.annotation.Profile;
 
 import java.util.Arrays;
 
@@ -20,18 +23,21 @@ public class MarsRoverRunner implements CommandLineRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(MarsRoverRunner.class);
 
+    @Value("${skip.code.execution:false}")
+    private boolean skipCodeExecution;
+
     @Override
     public void run(String... args) {
-        LOG.info("STARTING THE ROVER APPLICATION");
+        LOG.info("EXECUTING : command line runner");
 
-        if(Arrays.stream(args).count() !=2) {
+        if((Arrays.stream(args).count() != 2) ) {
             LOG.info("Provided number of arguments miss matched");
             throw new InvalidCommandException("Provide accurate command \n Example Command “3,4,N” “f,f,r,f,f”");
         }
 
         String[] initialState = args[0].split(",");
 
-        if (Arrays.stream(initialState).count() != 3){
+        if ((Arrays.stream(initialState).count() != 3)){
             LOG.info("Provided initial state of the rover is not matching with number of required fields.");
             throw new InvalidCommandException("Provided initial state of the rover is not matching with number of required fields.");
         }
@@ -49,7 +55,8 @@ public class MarsRoverRunner implements CommandLineRunner {
 
         System.out.println(marsRover.getStatus());
 
-        LOG.info("STOPPING THE ROVER APPLICATION");
+        LOG.info("STOPPING: command line runner");
+
 
     }
 

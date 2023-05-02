@@ -8,7 +8,7 @@ public class MarsRoverService {
     /*
     MarsRoverService process the movements command against a given rover. Any unknown move commands will be ignored.
      */
-    public void processCommands(MarsRover marsRover, char[] commands) {
+    public MarsRover processCommands(MarsRover marsRover, char[] commands) {
         for (char command : commands) {
             switch (command) {
                 case 'f' -> marsRover.getPosition().moveForward(marsRover.getDirection());
@@ -17,5 +17,6 @@ public class MarsRoverService {
                 case 'l' -> marsRover.setDirection(marsRover.getDirection().rotateAntiClockwise());
             }
         }
+        return marsRover;
     }
 }
