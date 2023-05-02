@@ -2,6 +2,7 @@ package com.rover.MarsRoverApp.MarsRover;
 
 import com.rover.MarsRoverApp.MarsRover.Entity.Direction;
 import com.rover.MarsRoverApp.MarsRover.Entity.MarsRover;
+import com.rover.MarsRoverApp.MarsRover.Exceptions.InvalidCommandException;
 import com.rover.MarsRoverApp.MarsRover.service.MarsRoverRunner;
 import com.rover.MarsRoverApp.MarsRover.service.MarsRoverService;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,6 +15,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.verify;
 
 @SpringBootTest
@@ -24,9 +27,6 @@ class MarsRoverAppApplicationTests {
 	@InjectMocks
 	private MarsRoverRunner marsRoverRunner;
 
-	@Mock
-	private MarsRoverService marsRoverService;
-
 	private MarsRover marsRover;
 
 	@BeforeEach
@@ -35,12 +35,18 @@ class MarsRoverAppApplicationTests {
 	}
 
 	@Test
-	public void testValidCommands() {
-		marsRoverService.processCommands(marsRover, "f,f,r,f,f".toCharArray());
-//		System.out.println(marsRover.getStatus());
-		//marsRoverRunner.run("3,4,N", "ffrff");
-
-		//verify(marsRoverService).processCommands(marsRover, new char[]{'f', 'f', 'r', 'f', 'f'});
+	public void testRunWithInvalidNumberOfArguments() {
+		assertThrows(InvalidCommandException.class, () -> marsRoverRunner.run("3,4,N"));
 	}
 
+
+	@Test
+	public void testRunWithInvalidInitialState() {
+		assertThrows(InvalidCommandException.class, () -> marsRoverRunner.run("3,4", "f,f,r,f,f"));
+	}
+
+	@Test
+	public void testRunWithInvalidDirection() {
+		assertThrows(IllegalArgumentException.class, () -> marsRoverRunner.run("3,4,Z", "f,f,r,f,f"));
+	}
 }
